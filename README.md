@@ -1,6 +1,8 @@
 # PACuna 
-## Automated Fine-Tuning of Language Models for Particle Accelerators
 
+[pdf](NeurIPS_2023_LLM.pdf)
+
+## Automated Fine-Tuning of Language Models for Particle Accelerators
 ![Pipeline](pipeline.png "Pipeline").
 
 Navigating the landscape of particle accelerators has become increasingly challenging with recent surges in contributions. These intricate devices challenge comprehension, even within individual facilities.
