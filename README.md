@@ -3,7 +3,7 @@
 [pdf](NeurIPS_2023_LLM.pdf)
 
 ```diff
-- Code and sources will follow (hopefully) next year
+- Code and sources will follow (hopefully) next year (written on 24.12.)
 ```
 
 ## Automated Fine-Tuning of Language Models for Particle Accelerators
