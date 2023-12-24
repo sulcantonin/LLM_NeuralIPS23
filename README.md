@@ -2,6 +2,10 @@
 
 [pdf](NeurIPS_2023_LLM.pdf)
 
+```diff
+- Code and sources will follow (hopefully) next year
+```
+
 ## Automated Fine-Tuning of Language Models for Particle Accelerators
 ![Pipeline](pipeline.png "Pipeline").
 
