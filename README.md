@@ -20,14 +20,14 @@ def prompt_formatter(question, answer = ""):
 
 ### PDF to Markdown
 To transform PDF to MMD, we use nougat OCR (https://github.com/facebookresearch/nougat)
-```
+```bash
 nougat *.pdf -o .
 ```
 In publication we mistakenly omitted  --no-skipping, we suggest others to use this parameter 
 
 ### Preprocessing
 Considering Nougat OCR MultipleMarkdown, which expresses equations with \(\), \[\] and tables, we prefer to have them in standardized format where equations are expressed in $, $$ and tables in plaintext 
-```
+```python
     # replace \[.*\] with equation mode $$
     eq_expr = re.compile(r'\\\[(.*?)\\\]', flags = re.DOTALL)
     while len(re.findall(eq_expr, x)) != 0:
@@ -56,13 +56,13 @@ At this stage, we have unsupervised data prepared
 
 ### Supservised Data (Q&A Paris)
 To generate Q&A pairs, we ask vicuna1.5-16k model with a following prompt
-```
+```python
 query = prompt_formatter(f"Generate ten questions with answers for paper:\"{data_}\"")
 ```
 where data_ contains paper itself. 
 
 To generate text from LLM, we use following text block (maxl
-```
+```python
 def test(q, model, max_length=16384, temperature=0.6):
     inputs = tokenizer(q, return_tensors="pt", return_token_type_ids=False).to(device)
     outputs = model.generate(
@@ -80,7 +80,7 @@ def test(q, model, max_length=16384, temperature=0.6):
 ```
 
 In order to extract Q&A invidual pairs, we use following heuristics
-```
+```python
 def extract_qa_pairs_from_result(text):
     qa_pairs = []
     text = re.split(r'\d+\.\s(.*\?)\n(.*)',text)
@@ -95,4 +95,4 @@ def extract_qa_pairs_from_result(text):
 ```
 
 ### Fine-tuning LLM
-See ```lora_unsup.ipynb```
+See [lora_unsup.ipynb](lora_unsup.ipynb)
