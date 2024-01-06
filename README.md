@@ -100,7 +100,7 @@ See [lora_unsup.ipynb](lora_unsup.ipynb)
 
 ### Test
 ```python
-    peft_model_id = model_folder + "/human_assistant_prompt_all_papers/checkpoint-77100/" # Last Checkpoint Path
+    peft_model_id = model_folder + "checkpoint-x/" # Last Checkpoint Path
     
     # peft_model_id = model_folder + "/checkpoint-13200/"
     config = PeftConfig.from_pretrained(peft_model_id)
