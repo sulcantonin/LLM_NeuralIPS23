@@ -1,5 +1,5 @@
 # PACuna : Automated Fine-Tuning of Language Models for Particle Accelerators
-Sources are in sources folder
+Sources are in sources folder. Unforutnately, some training sources (books) are licensed, therefore neither source data nor model can be published. 
 
 [pdf](NeurIPS_2023_LLM.pdf) [arxiv](https://arxiv.org/abs/2310.19106)
 
@@ -99,6 +99,29 @@ def extract_qa_pairs_from_result(text):
 See [lora_unsup.ipynb](lora_unsup.ipynb)
 
 ### Test
-```diff
-FORWARD PHASE, TO BE PUBLISHED. There are some specificities
+```python
+    peft_model_id = model_folder + "/human_assistant_prompt_all_papers/checkpoint-77100/" # Last Checkpoint Path
+    
+    # peft_model_id = model_folder + "/checkpoint-13200/"
+    config = PeftConfig.from_pretrained(peft_model_id)
+    model = AutoModelForCausalLM.from_pretrained(
+        config.base_model_name_or_path,
+        torch_dtype="auto",
+        device_map="auto",
+        offload_folder="offload",
+        offload_state_dict=True,
+    )  
+    tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path)
+    model = PeftModel.from_pretrained(model, peft_model_id)
+    # model = model.merge_and_unload()
+```
+
+Querying LLM
+```python
+device = 'cuda'
+max_length = 256
+T = 0.7
+
+p = "What is klystron"
+test(prompt_formatter(p), model, tokenizer, max_length = max_length, temperature = T) 
 ```
