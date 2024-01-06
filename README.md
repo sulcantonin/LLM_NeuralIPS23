@@ -97,3 +97,8 @@ def extract_qa_pairs_from_result(text):
 
 ### Fine-tuning LLM
 See [lora_unsup.ipynb](lora_unsup.ipynb)
+
+### Test
+```diff
+FORWARD PHASE, TO BE PUBLISHED. There are some specificities
+```
