@@ -1,4 +1,5 @@
 # PACuna : Automated Fine-Tuning of Language Models for Particle Accelerators
+Sources are in sources folder
 
 [pdf](NeurIPS_2023_LLM.pdf) [arxiv](https://arxiv.org/abs/2310.19106)
 
@@ -10,8 +11,8 @@ We automated data collection and question generation to minimize expert involvem
 PACuna demonstrates proficiency in addressing intricate accelerator questions, validated by experts.
 Our approach shows adapting language models to scientific domains by fine-tuning technical texts and auto-generated corpora capturing the latest developments can further produce pre-trained models to answer some intricate questions that commercially available assistants cannot and can serve as intelligent assistants for individual facilities.
 
-# Code
 
+# Code
 Each LLM need a proper prompt to know that we are asking a question:
 ```python
 def prompt_formatter(question, answer = ""):
