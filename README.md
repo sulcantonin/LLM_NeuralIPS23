@@ -13,7 +13,7 @@ Our approach shows adapting language models to scientific domains by fine-tuning
 # Code
 
 Each LLM need a proper prompt to know that we are asking a question:
-```
+```python
 def prompt_formatter(question, answer = ""):
     return f'### Human:\n{question}\n### Assistant:\n{answer}'
 ```
