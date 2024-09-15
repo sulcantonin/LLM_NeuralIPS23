@@ -1,9 +1,5 @@
 # PACuna : Automated Fine-Tuning of Language Models for Particle Accelerators
 
-```diff
-- We are working on PACuna 2.0, better, more factual and public, release date 1.5.2024
-```
-
 Sources are in sources folder. Unforutnately, some training sources (books) are licensed, therefore neither source data nor model can be published. 
 
 [pdf](NeurIPS_2023_LLM.pdf) [arxiv](https://arxiv.org/abs/2310.19106)
